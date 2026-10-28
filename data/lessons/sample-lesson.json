@@ -1,0 +1,56 @@
+{
+  "schemaVersion": "1.0",
+  "id": "python-for-loop-basics",
+  "title": "A Python for loop",
+  "concept": "How a Python for loop repeats an action",
+  "level": "beginner",
+  "targetDurationSeconds": 45,
+  "languages": ["en-IN", "hi-IN", "ta-IN"],
+  "scenes": [
+    {
+      "id": "intro", "type": "title-card",
+      "narration": {
+        "en-IN": "A for loop tells Python to repeat the same instructions for each item in a group. Imagine a list as a row of boxes. Python takes one item, stores it in a variable, and runs the indented instructions below the loop. Then it moves on to the next item.",
+        "hi-IN": "फॉर लूप पाइथन को किसी समूह की हर चीज़ के लिए वही निर्देश दोहराने को कहता है। सूची को डिब्बों की एक कतार समझिए। पाइथन एक चीज़ उठाकर उसे वेरिएबल में रखता है, फिर लूप के नीचे लिखे इंडेंट किए गए निर्देश चलाता है। इसके बाद वह अगली चीज़ पर जाता है।",
+        "ta-IN": "ஃபார் லூப் ஒரு குழுவில் உள்ள ஒவ்வொரு உருப்படிக்கும் அதே கட்டளைகளை மீண்டும் செய்ய பைத்தானிடம் சொல்கிறது. பட்டியலை பெட்டிகள் வரிசையாக இருப்பதாக நினைத்துக் கொள்ளுங்கள். பைத்தான் ஒரு உருப்படியை எடுத்து மாறியில் வைக்கிறது; பின்னர் லூப்பின் கீழே உள்தள்ளி எழுதப்பட்ட கட்டளைகளை இயக்குகிறது. அதன் பிறகு அடுத்த உருப்படிக்குச் செல்கிறது."
+      },
+      "captions": {
+        "en-IN": "A for loop repeats an action for each item.",
+        "hi-IN": "फॉर लूप हर चीज़ के लिए एक काम दोहराता है।",
+        "ta-IN": "ஃபார் லூப் ஒவ்வொரு உருப்படிக்கும் ஒரு செயலை மீண்டும் செய்கிறது."
+      },
+      "visual": { "heading": "Python for loops", "subtitle": "Repeat once for each item" }
+    },
+    {
+      "id": "loop-flow", "type": "diagram",
+      "narration": {
+        "en-IN": "Python begins with the first item and puts its value into the loop variable. It runs the indented action using that value. When the action finishes, Python returns to the collection, takes the next item, and repeats. The loop stops only after every item has had a turn.",
+        "hi-IN": "पाइथन पहली चीज़ से शुरू करता है और उसका मान लूप वेरिएबल में रखता है। फिर वह उस मान का उपयोग करके अंदर लिखा काम करता है। काम पूरा होने पर पाइथन समूह में लौटता है, अगली चीज़ लेता है और यही क्रम दोहराता है। सभी चीज़ों की बारी आने के बाद ही लूप रुकता है।",
+        "ta-IN": "பைதான் முதல் உருப்படியுடன் தொடங்கி அதன் மதிப்பை லூப் மாறியில் வைக்கிறது. அந்த மதிப்பைப் பயன்படுத்தி உள்தள்ளிய செயலை இயக்குகிறது. செயல் முடிந்ததும், பைதான் பட்டியலுக்குத் திரும்பி அடுத்த உருப்படியை எடுத்து இதே முறையை மீண்டும் செய்கிறது. எல்லா உருப்படிகளுக்கும் ஒரு முறை வந்த பிறகுதான் லூப் நிற்கும்."
+      },
+      "captions": {
+        "en-IN": "Next item → run action → repeat until done",
+        "hi-IN": "अगली चीज़ → काम करें → पूरा होने तक दोहराएँ",
+        "ta-IN": "அடுத்த உருப்படி → செயல் → முடியும் வரை மீண்டும் செய்"
+      },
+      "visual": {
+        "nodes": [{ "id": "items", "label": "Items: 1, 2, 3", "x": 0.18, "y": 0.5 }, { "id": "next", "label": "Take next item", "x": 0.5, "y": 0.5 }, { "id": "action", "label": "Run indented action", "x": 0.82, "y": 0.5 }],
+        "arrows": [{ "from": "items", "to": "next" }, { "from": "next", "to": "action" }, { "from": "action", "to": "next", "label": "repeat" }]
+      }
+    },
+    {
+      "id": "code-example", "type": "code-walkthrough",
+      "narration": {
+        "en-IN": "Now trace a small example. range three creates the values zero, one, and two. On the first pass, number holds zero. Python prints it, then moves to one. It prints one, moves to two, and prints again. After the third pass, there is no next value, so the loop ends. The colon and indentation show which line repeats.",
+        "hi-IN": "अब एक छोटा उदाहरण देखें। range three से शून्य, एक और दो मान मिलते हैं। पहली बार number में शून्य होता है। पाइथन उसे प्रिंट करता है और फिर एक पर जाता है। वह एक को प्रिंट करता है, दो पर जाता है और उसे भी प्रिंट करता है। तीसरी बार के बाद अगला मान नहीं बचता, इसलिए लूप समाप्त होता है। कोलन और इंडेंटेशन बताते हैं कि कौन-सी पंक्ति दोहराई जाएगी।",
+        "ta-IN": "இப்போது ஒரு சிறிய எடுத்துக்காட்டைப் பார்ப்போம். range three பூஜ்ஜியம், ஒன்று, இரண்டு என்ற மதிப்புகளை உருவாக்குகிறது. முதல் சுற்றில் number மாறியில் பூஜ்ஜியம் இருக்கும். பைதான் அதை அச்சிட்டு, அடுத்த மதிப்பான ஒன்றுக்குச் செல்கிறது. ஒன்றை அச்சிட்டு, பின்னர் இரண்டுக்குச் சென்று அதையும் அச்சிடுகிறது. மூன்றாவது சுற்றுக்குப் பிறகு அடுத்த மதிப்பு இல்லாததால் லூப் முடிகிறது. கோலனும் உள்தள்ளலும் எந்த வரி மீண்டும் இயங்கும் என்பதை காட்டுகின்றன."
+      },
+      "captions": {
+        "en-IN": "range(3) gives 0, 1, 2. Print runs three times.",
+        "hi-IN": "range(3) से 0, 1, 2 मिलते हैं। प्रिंट तीन बार चलता है।",
+        "ta-IN": "range(3) 0, 1, 2 தருகிறது. பிரிண்ட் மூன்று முறை இயங்கும்."
+      },
+      "visual": { "heading": { "en-IN": "Trace the loop step by step", "hi-IN": "लूप को चरणबद्ध समझें", "ta-IN": "லூப்பை படிப்படியாகப் பார்ப்போம்" }, "code": ["for number in range(3):", "    print(number)"], "highlightLines": [1, 2], "output": ["0", "1", "2"] }
+    }
+  ]
+}

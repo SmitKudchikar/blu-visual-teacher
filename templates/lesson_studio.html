@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f7fb">
+  <title>Blu — Visual lesson studio</title>
+  <link rel="stylesheet" href="/static/lesson_studio.css">
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar" aria-label="Main navigation">
+      <div class="brand"><span class="brand-mark" aria-hidden="true">b</span><span>blu <span style="font-weight:500;color:#8590a0">studio</span></span></div>
+      <div class="workspace-label">Workspace</div>
+      <div class="nav-item active" aria-current="page"><span class="nav-icon" aria-hidden="true">✦</span>Lesson creator</div>
+      <div class="sidebar-bottom"><strong><span class="local-dot" aria-hidden="true"></span>Running on your device</strong><p>Your lesson is planned locally. No account or cloud upload needed.</p></div>
+    </aside>
+
+    <main class="main">
+      <div class="topbar"><div class="breadcrumb">Workspace <span aria-hidden="true">/</span> <b>Lesson creator</b></div><div class="avatar" aria-label="Local workspace">B</div></div>
+      <header class="intro">
+        <div class="eyebrow">Make learning visual</div>
+        <h1>What are we learning today?</h1>
+        <p>Turn any topic into a bite-sized visual lesson with narration.</p>
+      </header>
+
+      <div class="workbench">
+        <section class="panel" aria-labelledby="create-heading">
+          <div class="panel-heading"><h2 id="create-heading">Create a lesson</h2><span class="step">01 &nbsp; / &nbsp; SETUP</span></div>
+          <form class="form-body" id="form">
+            <div class="field">
+              <label class="field-label" for="topic">Your lesson topic <span class="optional">UP TO 180 CHARACTERS</span></label>
+              <div class="topic-wrap"><span class="topic-icon" aria-hidden="true">✦</span><input id="topic" name="topic" type="text" required maxlength="180" autocomplete="off" placeholder="e.g. How do rainbows form?"></div>
+              <p class="field-hint">Be specific for a more focused explanation.</p>
+            </div>
+            <div class="field">
+              <div class="field-label">Need an idea? <span class="optional">TRY A TOPIC</span></div>
+              <div class="examples">
+                <button class="example" type="button" data-topic="How do rainbows form?">🌈 &nbsp;Rainbows</button>
+                <button class="example" type="button" data-topic="Explain photosynthesis simply">🌱 &nbsp;Photosynthesis</button>
+                <button class="example" type="button" data-topic="How does a Python loop work?">⌘ &nbsp;Python loops</button>
+              </div>
+            </div>
+            <div class="two-col">
+              <div class="field">
+                <label class="field-label" for="level">Learning level</label>
+                <select id="level" name="level"><option value="beginner">Beginner</option><option value="intermediate">Intermediate</option></select>
+              </div>
+              <div class="field">
+                <label class="field-label" for="language">Lesson language</label>
+                <select id="language" name="language"><option value="hi-IN" selected>Hindi</option><option value="en-IN">English (India)</option><option value="ta-IN">Tamil</option></select>
+              </div>
+            </div>
+            <div class="two-col">
+              <div class="field">
+                <label class="field-label" for="voice">Narration voice</label>
+                <select id="voice" name="voice"></select>
+              </div>
+              <div class="field">
+                <div class="duration-header"><label class="field-label" for="speed">Speech speed</label><output class="duration-output" id="speed-value" for="speed">1.0×</output></div>
+                <input id="speed" name="speed" type="range" min="0.75" max="1.25" step="0.05" value="1">
+              </div>
+            </div>
+            <div class="field">
+              <div class="duration-header"><label class="field-label" for="duration">Target duration</label><output class="duration-output" id="duration-value" for="duration">60 sec</output></div>
+              <input id="duration" name="duration" type="range" min="30" max="90" step="5" value="60">
+              <div class="range-labels"><span>30 sec</span><span>90 sec</span></div>
+            </div>
+            <button class="primary" id="submit" type="submit" disabled><span aria-hidden="true">✦</span> Generate my lesson</button>
+            <div class="status" id="status" role="status" aria-live="polite"></div>
+          </form>
+        </section>
+
+        <section class="panel preview-panel" aria-labelledby="preview-heading">
+          <div class="panel-heading">
+            <div class="preview-heading-main"><h2 id="preview-heading">Lesson preview</h2></div>
+            <span class="preview-status"><span class="local-dot" aria-hidden="true"></span>Private workspace</span>
+          </div>
+          <div class="preview-content">
+            <div class="empty-state" id="empty-state">
+              <div class="empty-art" aria-hidden="true"><div class="art-card back"></div><div class="art-card front">▶</div><span class="art-spark">✦</span></div>
+              <h3>Your next big idea, made visual.</h3>
+              <p>Your lesson preview will appear here. Add a topic to get started — it usually takes a few minutes.</p>
+              <div class="empty-tip">✦ &nbsp;Every lesson includes visuals, captions &amp; narration</div>
+            </div>
+            <div class="results" id="results">
+              <div class="result-meta"><h3 class="result-title" id="result-title">Your lesson</h3><span class="result-badge" id="badge">LOCAL PLAN</span></div>
+              <div class="frame" id="preview-frame"><iframe id="preview" title="Generated visual lesson preview" src="about:blank" allowfullscreen></iframe><button class="expand-preview" id="expand-preview" type="button" aria-label="Expand lesson preview" aria-pressed="false">⛶ Expand</button></div>
+              <div class="video-row"><h3>Lesson video</h3><span class="video-language-tag" id="video-language">Selected language</span></div>
+              <video id="lesson-video" controls preload="metadata" playsinline aria-label="Generated Blu Visual Teacher lesson video"></video>
+              <p class="video-note" id="video-note">Your generated video will appear here when ready.</p>
+              <a class="download-video" id="download-video" hidden download>Download MP4</a>
+            </div>
+          </div>
+        </section>
+      </div>
+      <p class="privacy-note">Made for curious minds &nbsp;·&nbsp; Lessons are generated locally on this device</p>
+    </main>
+  </div>
+  <script src="/static/lesson_studio.js" defer></script>
+</body>
+</html>

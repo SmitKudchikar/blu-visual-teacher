@@ -1,0 +1,322 @@
+{
+  "dataset": "blu-visual-teacher-prompt-eval",
+  "purpose": "prompt-regression-evaluation",
+  "note": "These cases evaluate prompt-specific lesson generation. They do not fine-tune model weights.",
+  "cases": [
+    {
+      "id": "arrays-beginner-en",
+      "topic": "Teach me how arrays store values and how to read an item by index.",
+      "level": "beginner",
+      "language": "en-IN",
+      "durationSeconds": 45,
+      "mustCover": [
+        "array stores multiple values",
+        "zero-based index access"
+      ],
+      "codeScene": {
+        "shouldDemonstrate": "create a list and print one indexed value",
+        "genericLoopAllowed": false
+      }
+    },
+    {
+      "id": "arrays-beginner-hi",
+      "topic": "हिंदी में समझाइए कि arrays में कई मान कैसे रखे जाते हैं और index से एक मान कैसे पढ़ते हैं।",
+      "level": "beginner",
+      "language": "hi-IN",
+      "durationSeconds": 45,
+      "mustCover": [
+        "एक संरचना में कई मान",
+        "index से item पढ़ना"
+      ],
+      "codeScene": {
+        "shouldDemonstrate": "Python list बनाकर किसी index का मान दिखाना",
+        "genericLoopAllowed": false
+      }
+    },
+    {
+      "id": "for-loop-beginner-en",
+      "topic": "Explain how a for loop visits each item in a list and prints it.",
+      "level": "beginner",
+      "language": "en-IN",
+      "durationSeconds": 45,
+      "mustCover": [
+        "one item per iteration",
+        "loop body repeats"
+      ],
+      "codeScene": {
+        "shouldDemonstrate": "iterate over a short list and print each item",
+        "genericLoopAllowed": true
+      }
+    },
+    {
+      "id": "for-loop-beginner-hi",
+      "topic": "एक for loop सूची के हर item पर कैसे चलता है, इसे हिंदी में सिखाइए।",
+      "level": "beginner",
+      "language": "hi-IN",
+      "durationSeconds": 45,
+      "mustCover": [
+        "हर item पर एक बार चलना",
+        "दोहराया जाने वाला loop body"
+      ],
+      "codeScene": {
+        "shouldDemonstrate": "छोटी सूची पर for loop",
+        "genericLoopAllowed": true
+      }
+    },
+    {
+      "id": "binary-search-intermediate-en",
+      "topic": "Teach binary search on a sorted array and explain why each step halves the search range.",
+      "level": "intermediate",
+      "language": "en-IN",
+      "durationSeconds": 60,
+      "mustCover": [
+        "input must be sorted",
+        "compare the middle item",
+        "discard half the range"
+      ],
+      "codeScene": {
+        "shouldDemonstrate": "middle index and search-range update",
+        "genericLoopAllowed": true
+      }
+    },
+    {
+      "id": "recursion-beginner-en",
+      "topic": "Explain recursion using a countdown, including the base case that stops the calls.",
+      "level": "beginner",
+      "language": "en-IN",
+      "durationSeconds": 45,
+      "mustCover": [
+        "function calls itself",
+        "base case stops recursion"
+      ],
+      "codeScene": {
+        "shouldDemonstrate": "small recursive countdown with a base case",
+        "genericLoopAllowed": false
+      }
+    },
+    {
+      "id": "photosynthesis-beginner-hi",
+      "topic": "पौधे सूर्य के प्रकाश से भोजन कैसे बनाते हैं? Photosynthesis को हिंदी में समझाइए।",
+      "level": "beginner",
+      "language": "hi-IN",
+      "durationSeconds": 60,
+      "mustCover": [
+        "sunlight",
+        "water",
+        "carbon dioxide",
+        "sugar and oxygen"
+      ],
+      "codeScene": {
+        "shouldDemonstrate": "variables representing the inputs and result of photosynthesis",
+        "genericLoopAllowed": false
+      }
+    },
+    {
+      "id": "water-cycle-beginner-hi",
+      "topic": "हिंदी में पानी के चक्र के तीन चरण समझाइए: evaporation, condensation और precipitation।",
+      "level": "beginner",
+      "language": "hi-IN",
+      "durationSeconds": 60,
+      "mustCover": [
+        "evaporation",
+        "condensation",
+        "precipitation"
+      ],
+      "codeScene": {
+        "shouldDemonstrate": "a simple sequence representing water-cycle stages",
+        "genericLoopAllowed": false
+      }
+    },
+    {
+      "id": "cloud-formation-beginner-en",
+      "topic": "How do clouds form when warm, moist air rises and cools?",
+      "level": "beginner",
+      "language": "en-IN",
+      "durationSeconds": 45,
+      "mustCover": [
+        "moist air rises",
+        "cooling",
+        "water vapor condenses"
+      ],
+      "codeScene": {
+        "shouldDemonstrate": "conditions for water vapor to condense into a cloud",
+        "genericLoopAllowed": false
+      }
+    },
+    {
+      "id": "kite-flight-beginner-hi",
+      "topic": "पतंग हवा में कैसे उड़ती है? हवा, पतंग के कोण और lift की भूमिका हिंदी में समझाइए।",
+      "level": "beginner",
+      "language": "hi-IN",
+      "durationSeconds": 45,
+      "mustCover": [
+        "wind",
+        "kite angle",
+        "lift",
+        "string provides control"
+      ],
+      "codeScene": {
+        "shouldDemonstrate": "wind and kite angle as named variables in a simple lift example",
+        "genericLoopAllowed": false
+      }
+    },
+    {
+      "id": "gravity-beginner-en",
+      "topic": "Explain gravity with an example of an object falling toward Earth.",
+      "level": "beginner",
+      "language": "en-IN",
+      "durationSeconds": 45,
+      "mustCover": [
+        "attraction between masses",
+        "Earth pulls objects toward it"
+      ],
+      "codeScene": {
+        "shouldDemonstrate": "a small model connecting mass and gravitational pull",
+        "genericLoopAllowed": false
+      }
+    },
+    {
+      "id": "fractions-beginner-hi",
+      "topic": "पिज़्ज़ा के उदाहरण से numerator और denominator समझाइए।",
+      "level": "beginner",
+      "language": "hi-IN",
+      "durationSeconds": 45,
+      "mustCover": [
+        "denominator is total equal parts",
+        "numerator is selected parts"
+      ],
+      "codeScene": {
+        "shouldDemonstrate": "fraction values such as 3/8 and explain each number",
+        "genericLoopAllowed": false
+      }
+    },
+    {
+      "id": "electric-circuit-beginner-en",
+      "topic": "Explain how a battery, wires, and a closed switch make a bulb light in a simple circuit.",
+      "level": "beginner",
+      "language": "en-IN",
+      "durationSeconds": 45,
+      "mustCover": [
+        "closed path",
+        "battery supplies energy",
+        "open switch breaks the circuit"
+      ],
+      "codeScene": {
+        "shouldDemonstrate": "a closed-circuit condition controlling a bulb",
+        "genericLoopAllowed": false
+      }
+    },
+    {
+      "id": "solar-panels-intermediate-en",
+      "topic": "Explain how a solar panel converts light into electrical energy and how an inverter makes it usable at home.",
+      "level": "intermediate",
+      "language": "en-IN",
+      "durationSeconds": 60,
+      "mustCover": [
+        "photovoltaic cells",
+        "direct current",
+        "inverter converts to alternating current"
+      ],
+      "codeScene": {
+        "shouldDemonstrate": "energy conversion stages with domain-specific names",
+        "genericLoopAllowed": false
+      }
+    },
+    {
+      "id": "password-safety-beginner-hi",
+      "topic": "मजबूत password कैसे बनाते हैं और उसे सुरक्षित क्यों रखना चाहिए? हिंदी में समझाइए।",
+      "level": "beginner",
+      "language": "hi-IN",
+      "durationSeconds": 45,
+      "mustCover": [
+        "long unique passwords",
+        "do not share passwords",
+        "password manager or passphrase"
+      ],
+      "codeScene": {
+        "shouldDemonstrate": "a simple password-strength check without exposing real credentials",
+        "genericLoopAllowed": false
+      }
+    },
+    {
+      "id": "no-code-mandatory-gravity",
+      "topic": "Teach a young learner why a dropped ball falls toward Earth, using a clear everyday example.",
+      "level": "beginner",
+      "language": "en-IN",
+      "durationSeconds": 30,
+      "mustCover": [
+        "gravity attracts masses",
+        "Earth pulls the ball downward"
+      ],
+      "codeScene": {
+        "shouldDemonstrate": "omit code and use a physical explanation or diagram",
+        "genericLoopAllowed": false
+      }
+    },
+    {
+      "id": "topic-scope-fraction-longer",
+      "topic": "Explain numerator and denominator using 3/8 of a pizza, for an intermediate learner.",
+      "level": "intermediate",
+      "language": "hi-IN",
+      "durationSeconds": 75,
+      "mustCover": [
+        "denominator counts all equal parts",
+        "numerator counts selected parts",
+        "3/8 means three of eight parts"
+      ],
+      "codeScene": {
+        "shouldDemonstrate": "use a labeled fraction visual; code is unnecessary",
+        "genericLoopAllowed": false
+      }
+    },
+    {
+      "id": "intermediate-binary-search-short",
+      "topic": "For an intermediate learner, trace binary search for 23 in the sorted list [3, 8, 12, 17, 23, 31, 40].",
+      "level": "intermediate",
+      "language": "en-IN",
+      "durationSeconds": 30,
+      "mustCover": [
+        "list must be sorted",
+        "compare the middle value",
+        "discard the half that cannot contain the target"
+      ],
+      "codeScene": {
+        "shouldDemonstrate": "valid Python trace with a changing search interval",
+        "genericLoopAllowed": true
+      }
+    },
+    {
+      "id": "single-language-tamil-science",
+      "topic": "தமிழில் ஒளிச்சேர்க்கை: சூரிய ஒளி, நீர், கார்பன் டை ஆக்சைடு ஆகியவற்றைப் பயன்படுத்தி தாவரங்கள் சர்க்கரையும் ஆக்சிஜனையும் உருவாக்குகின்றன.",
+      "level": "beginner",
+      "language": "ta-IN",
+      "durationSeconds": 60,
+      "mustCover": [
+        "sunlight",
+        "water",
+        "carbon dioxide",
+        "sugar and oxygen"
+      ],
+      "codeScene": {
+        "shouldDemonstrate": "diagram the biological process; code is unnecessary",
+        "genericLoopAllowed": false
+      }
+    },
+    {
+      "id": "moon-phases-beginner-en",
+      "topic": "Why does the Moon appear to change shape?",
+      "level": "beginner",
+      "language": "en-IN",
+      "durationSeconds": 60,
+      "mustCover": [
+        "Moon keeps the same shape",
+        "changing sunlit portion seen from Earth",
+        "crescent, half, and full phases"
+      ],
+      "codeScene": {
+        "shouldDemonstrate": "none; use a visual explanation",
+        "genericLoopAllowed": false
+      }
+    }
+  ]
+}

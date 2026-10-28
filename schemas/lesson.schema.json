@@ -1,0 +1,313 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Blu Visual Teacher lesson",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "id",
+    "title",
+    "concept",
+    "level",
+    "targetDurationSeconds",
+    "languages",
+    "scenes"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "1.0"
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "concept": {
+      "type": "string",
+      "minLength": 1
+    },
+    "level": {
+      "enum": [
+        "beginner",
+        "intermediate"
+      ]
+    },
+    "targetDurationSeconds": {
+      "type": "integer",
+      "minimum": 30,
+      "maximum": 90
+    },
+    "languages": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "en-IN",
+          "hi-IN",
+          "ta-IN",
+          "te-IN",
+          "bn-IN",
+          "mr-IN"
+        ]
+      }
+    },
+    "scenes": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 6,
+      "items": {
+        "$ref": "#/$defs/scene"
+      }
+    },
+    "visualObjects": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "sun",
+          "moon",
+          "cloud",
+          "plant",
+          "flower",
+          "water",
+          "earth",
+          "ball",
+          "insect"
+        ]
+      }
+    }
+  },
+  "$defs": {
+    "localized": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "sceneCommon": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "narration",
+        "captions",
+        "visual"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "narration": {
+          "$ref": "#/$defs/localized"
+        },
+        "captions": {
+          "$ref": "#/$defs/localized"
+        }
+      }
+    },
+    "scene": {
+      "oneOf": [
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/sceneCommon"
+            },
+            {
+              "properties": {
+                "type": {
+                  "const": "title-card"
+                },
+                "visual": {
+                  "type": "object",
+                  "required": [
+                    "heading",
+                    "subtitle"
+                  ],
+                  "properties": {
+                    "heading": {
+                      "type": "string"
+                    },
+                    "subtitle": {
+                      "type": "string"
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/sceneCommon"
+            },
+            {
+              "properties": {
+                "type": {
+                  "const": "diagram"
+                },
+                "visual": {
+                  "type": "object",
+                  "required": [
+                    "nodes",
+                    "arrows"
+                  ],
+                  "properties": {
+                    "nodes": {
+                      "type": "array",
+                      "minItems": 1,
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "id",
+                          "label",
+                          "x",
+                          "y"
+                        ],
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "label": {
+                            "type": "string"
+                          },
+                          "x": {
+                            "type": "number",
+                            "minimum": 0,
+                            "maximum": 1
+                          },
+                          "y": {
+                            "type": "number",
+                            "minimum": 0,
+                            "maximum": 1
+                          }
+                        },
+                        "additionalProperties": false
+                      }
+                    },
+                    "arrows": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "from",
+                          "to"
+                        ],
+                        "properties": {
+                          "from": {
+                            "type": "string"
+                          },
+                          "to": {
+                            "type": "string"
+                          },
+                          "label": {
+                            "type": "string"
+                          }
+                        },
+                        "additionalProperties": false
+                      }
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/sceneCommon"
+            },
+            {
+              "properties": {
+                "type": {
+                  "const": "code-walkthrough"
+                },
+                "visual": {
+                  "type": "object",
+                  "required": [
+                    "heading",
+                    "code",
+                    "highlightLines",
+                    "output"
+                  ],
+                  "properties": {
+                    "heading": {
+                      "$ref": "#/$defs/localized"
+                    },
+                    "code": {
+                      "type": "array",
+                      "minItems": 1,
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "highlightLines": {
+                      "type": "array",
+                      "items": {
+                        "type": "integer",
+                        "minimum": 1
+                      }
+                    },
+                    "output": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/sceneCommon"
+            },
+            {
+              "properties": {
+                "type": {
+                  "const": "concept-card"
+                },
+                "visual": {
+                  "type": "object",
+                  "required": [
+                    "heading",
+                    "points"
+                  ],
+                  "properties": {
+                    "heading": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "points": {
+                      "type": "array",
+                      "minItems": 1,
+                      "items": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

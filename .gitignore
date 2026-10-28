@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+build/
+ollama-src/
+IndicTransToolkit/
+submission/
+lesson-preview.html
+*.exe
+models/kokoro/*.onnx
+models/kokoro/*.bin
